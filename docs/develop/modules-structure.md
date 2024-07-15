@@ -5,15 +5,27 @@ Basically HumHub modules are identical to [Yii2 modules](http://www.yiiframework
 
 A very basic module consists of the following elements:
 
-```
- controllers/ - contains controller classes
- migrations/  - contains database migration files and uninstall script
- models/      - contains model classes
- views/       - contains the modules view files
- widgets/     - contains widget classes
- Module.php   - the main module class which can contain enable/disable logic for contentcontainer etc.
- config.php   - base module configuration.
- module.json  - module metadata
+```mermaid
+graph TD
+    A[Module Root] --> B[controllers/]
+    A --> C[migrations/]
+    A --> D[models/]
+    A --> E[views/]
+    A --> F[widgets/]
+    A --> G[Module.php]
+    A --> H[config.php]
+    A --> I[module.json]
+    B[controllers/] --> B1[controller classes]
+    C[migrations/] --> C1[database migration files]
+    C --> C2[uninstall script]
+    D[models/] --> D1[model classes]
+    E[views/] --> E1[module view files]
+    F[widgets/] --> F1[widget classes]
+    G[Module.php] --> G1[main module class]
+    G1 --> G2[enable/disable logic for contentcontainer]
+    H[config.php] --> H1[base module configuration]
+    I[module.json] --> I1[module metadata]
+
 ```
 
 ## Main Configuration File `config.php`
@@ -130,28 +142,54 @@ The following table shows the default files.
 
 The following structure contains some additional directories and files, which can be added for specific use-cases or features. 
 
-```
- activities     - activity classes
- assets/        - asset bundle classes
- components/    - component and services classes
- controllers/   - see above
- live/          - live event classes
- jobs/          - queue job classes
- messages/      - contains the modules message files
- migrations/    - see above
- helpers/       - contains utility classes e.g. for URL generation
- models/        - see above
- modules/       - contains any submodules
- notifications/ - notification classes
- permissions/   - permission classes
- resources/     - contains web assets as javascript files or stylesheets
- tests/         - module tests
- views/         - see above
- widgets/       - see above
- Events.php     - is often used for static event handlers
- Module.php     - see above
- config.php     - see above
- module.json    - see above
+```mermaid
+graph TD
+    A[Module Root] --> B[activities]
+    A --> C[assets/]
+    A --> D[components/]
+    A --> E[controllers/]
+    A --> F[live/]
+    A --> G[jobs/]
+    A --> H[messages/]
+    A --> I[migrations/]
+    A --> J[helpers/]
+    A --> K[models/]
+    A --> L[modules/]
+    A --> M[notifications/]
+    A --> N[permissions/]
+    A --> O[resources/]
+    A --> P[tests/]
+    A --> Q[views/]
+    A --> R[widgets/]
+    A --> S[Events.php]
+    A --> T[Module.php]
+    A --> U[config.php]
+    A --> V[module.json]
+    
+    B --> B1[activity classes]
+    C --> C1[asset bundle classes]
+    D --> D1[component and services classes]
+    E --> E1[controller classes]
+    F --> F1[live event classes]
+    G --> G1[queue job classes]
+    H --> H1[module message files]
+    I --> I1[database migration files]
+    J --> J1[utility classes]
+    J1 --> J2[e.g. for URL generation]
+    K --> K1[model classes]
+    L --> L1[submodules]
+    M --> M1[notification classes]
+    N --> N1[permission classes]
+    O --> O1[web assets]
+    O1 --> O2[javascript files]
+    O1 --> O3[stylesheets]
+    P --> P1[module tests]
+    Q --> Q1[view files]
+    R --> R1[widget classes]
+    S --> S1[static event handlers]
+    T --> T1[main module class]
+    U --> U1[base module configuration]
+    V --> V1[module metadata]
 ```
 
 > Info: You may want to use the [devtools Module](https://github.com/humhub/humhub-modules-devtools) to create a module skeleton.
