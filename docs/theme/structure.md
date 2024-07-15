@@ -35,24 +35,54 @@ Once you created an own theme folder, you need to enable it in the administratio
 
 This overview shows a complete theme folder structure including own less and view files.
 
-```
-    /themes/
-        /mytheme/                       - My Theme Name
-            /css/                       - Your theme css files (optional)
-                theme.css               - Your actual theme css file
-            /less/                      - Contains less files used to build your theme.css (optional)
-                build.less              - Used to build your theme.css
-                variables.less          - Contains theme variables as text and background colors
-                mixins.less             - Used to define own mixins
-                theme.less              - Contains your own theme definitions
-            /js/                        - Additional javascript files (optional)
-            /font/                      - Additional fonts (optional)
-            /img/                       - Images (optional)         
-            /views/                     - Overwritten Views
-                /moduleId/              - Id of Module (module_core Id, module Id, or base controller id)
-                    /controllerId/      - Id of Controller
-                        index.php       - Overwritten View File
-                    /widgets/           - Links to /someModule/widgets/views/
-                        someWidget.php  - Overwritten widget view
-                /widgets/               - Links to /protected/widget/views
+```mermaid
+graph TD
+    A[/themes/] --> B[/mytheme/]
+    B --> C[/css/]
+    B --> D[/less/]
+    B --> E[/js/]
+    B --> F[/font/]
+    B --> G[/img/]
+    B --> H[/views/]
+    
+    C --> C1[theme.css]
+    C1[theme.css] --> C2[Your actual theme css file]
+    
+    D --> D1[build.less]
+    D --> D2[variables.less]
+    D --> D3[mixins.less]
+    D --> D4[theme.less]
+    D1 --> D1a[Used to build your theme.css]
+    D2 --> D2a[Contains theme variables]
+    D3 --> D3a[Used to define own mixins]
+    D4 --> D4a[Contains your own theme definitions]
+    
+    E --> E1[Additional javascript files]
+    F --> F1[Additional fonts]
+    G --> G1[Images]
+    
+    H --> I[/moduleId/]
+    H --> J[/widgets/]
+    
+    I --> I1[/controllerId/]
+    I --> I2[/widgets/]
+    
+    I1 --> I1a[index.php]
+    I1a --> I1b[Overwritten View File]
+    
+    I2 --> I2a[someWidget.php]
+    I2a --> I2b[Overwritten widget view]
+    
+    J --> J1[Links to /protected/widget/views]
+    
+    B --> B1[My Theme Name]
+    C --> C3[Your theme css files optional]
+    D --> D5[Contains less files used to build your theme.css optional]
+    E --> E2[optional]
+    F --> F2[optional]
+    G --> G2[optional]
+    H --> H1[Overwritten Views]
+    I --> I3[Id of Module module_core Id, module Id, or base controller id]
+    I1 --> I1c[Id of Controller]
+    I2 --> I2c[Links to /someModule/widgets/views/]
 ```
