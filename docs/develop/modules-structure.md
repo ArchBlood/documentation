@@ -15,9 +15,13 @@ graph TD
     A --> G[Module.php]
     A --> H[config.php]
     A --> I[module.json]
+    A --> J[resources/]
+    A --> K[assets/]
+    A --> L[messages/]
+    
     B[controllers/] --> B1[controller classes]
     C[migrations/] --> C1[database migration files]
-    C --> C2[uninstall script]
+    C --> C2[uninstall.php]
     D[models/] --> D1[model classes]
     E[views/] --> E1[module view files]
     F[widgets/] --> F1[widget classes]
@@ -25,6 +29,12 @@ graph TD
     G1 --> G2[enable/disable logic for contentcontainer]
     H[config.php] --> H1[base module configuration]
     I[module.json] --> I1[module metadata]
+    J[resources/] --> J1[js/]
+    J --> J2[css/]
+    J --> J3[fonts/]
+    J --> J4[images/]
+    K[assets/] --> K1[Assets.php]
+    L[messages/] --> L1[translation files]
 
 ```
 
@@ -144,9 +154,10 @@ The following structure contains some additional directories and files, which ca
 
 ```mermaid
 graph TD
-    A[Module Root] --> B[activities]
+    A[Module Root] --> B[activities/]
     A --> C[assets/]
     A --> D[components/]
+    A --> Z[services/]
     A --> E[controllers/]
     A --> F[live/]
     A --> G[jobs/]
@@ -165,10 +176,14 @@ graph TD
     A --> T[Module.php]
     A --> U[config.php]
     A --> V[module.json]
+    A --> W[console/]
+    A --> X[interfaces/]
+    A --> Y[stream/]
     
     B --> B1[activity classes]
     C --> C1[asset bundle classes]
-    D --> D1[component and services classes]
+    D --> D1[component classes]
+    Z --> Z1[service classes]
     E --> E1[controller classes]
     F --> F1[live event classes]
     G --> G1[queue job classes]
@@ -183,6 +198,8 @@ graph TD
     O --> O1[web assets]
     O1 --> O2[javascript files]
     O1 --> O3[stylesheets]
+    O1 --> O4[images/]
+    O1 --> O5[fonts/]
     P --> P1[module tests]
     Q --> Q1[view files]
     R --> R1[widget classes]
@@ -190,6 +207,9 @@ graph TD
     T --> T1[main module class]
     U --> U1[base module configuration]
     V --> V1[module metadata]
+    W --> W1[console commands]
+    X --> X1[interface definitions]
+    Y --> Y1[stream action classes]
 ```
 
 > Info: You may want to use the [devtools Module](https://github.com/humhub/humhub-modules-devtools) to create a module skeleton.
