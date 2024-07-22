@@ -44,9 +44,10 @@ graph TD
     B --> F[/font/]
     B --> G[/img/]
     B --> H[/views/]
+    B --> K[/assets/]
     
     C --> C1[theme.css]
-    C1[theme.css] --> C2[Your actual theme css file]
+    C1 --> C2[Your actual theme css file]
     
     D --> D1[build.less]
     D --> D2[variables.less]
@@ -75,7 +76,9 @@ graph TD
     
     J --> J1[Links to /protected/widget/views]
     
-    B --> B1[My Theme Name]
+    K --> K1[ThemeAsset.php]
+    
+    B --> B1[theme.json]
     C --> C3[Your theme css files optional]
     D --> D5[Contains less files used to build your theme.css optional]
     E --> E2[optional]
